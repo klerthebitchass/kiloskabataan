@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Marcellus SC', serif;
+  color: #000;
+}
+
+/* ===== FULL-SCREEN BACKGROUND ===== */
+.welcome {
+  width: 100%;
+  min-height: 100vh;
+
+  /* >>> YOUR PICTURE: put it in images/church.jpg (1512 x 982 px) <<< */
+  background-image: url('banner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+/* ===== TEXT BLOCK (top-left) ===== */
+.welcome-content {
+  max-width: 680px;
+  padding: 50px 0 0 55px;
+}
+
+.welcome-content h1 {
+  font-size: 2.6rem;
+  font-weight: 400;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+.welcome-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* ===== BUTTONS ===== */
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 0.75rem;
+  text-decoration: none;
+  text-align: center;
+  width: 95px;
+  padding: 7px 0;
+  border: 1px solid #d4b26a;
+  border-radius: 4px;
+  transition: 0.2s ease;
+}
+
+.btn-login {
+  background: #d4b26a;
+  color: #000;
+}
+
+.btn-register {
+  background: #fff;
+  color: #000;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .welcome-content {
+    padding: 30px 20px 0 20px;
+  }
+  .welcome-content h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===== REGISTER / LOGIN PAGES ===== */
+.auth-page {
+  min-height: 100vh;
+
+  /* >>> YOUR PICTURE: register-bg.jpg (1512 x 982 px), saved next to banner.png <<< */
+  background-image: url('registerbanner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 30px 5vw;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 640px;
+  background: #fff;
+  border: 2px solid #b8963f;
+  border-radius: 22px;
+  padding: 36px 44px 30px;
+}
+
+.auth-card h2 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.auth-sub {
+  font-size: 0.8rem;
+  margin-bottom: 14px;
+}
+
+.auth-card label {
+  display: block;
+  font-size: 0.75rem;
+  margin: 14px 0 6px;
+}
+
+/* ----- Inputs ----- */
+.auth-card input[type="text"],
+.auth-card input[type="email"],
+.auth-card input[type="password"],
+.auth-card select {
+  width: 100%;
+  height: 52px;
+  padding: 0 14px;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  background: #fff;
+  border: 1px solid #777;
+  border-radius: 6px;
+}
+
+.auth-card input:focus,
+.auth-card select:focus {
+  outline: none;
+  border-color: #b8963f;
+}
+
+/* ----- Dropdowns with the arrow icon ----- */
+.auth-card select {
+  font-family: 'Marcellus SC', serif;
+  font-size: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 46px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23b8963f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+}
+
+.auth-card select:required:invalid {
+  color: #8a8a8a;          /* grey "Select your purok" text */
+}
+
+.auth-card select option {
+  color: #000;
+}
+
+/* ----- Consent checkbox ----- */
+.auth-card label.consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 18px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: #b8963f;
+}
+
+/* ----- Buttons ----- */
+.btn-next {
+  display: block;
+  width: 140px;
+  margin: 24px auto 0;
+  padding: 9px 0;
+  cursor: pointer;
+}
+
+.btn-full {
+  display: block;
+  width: 100%;
+  margin-top: 22px;
+  padding: 11px 0;
+  cursor: pointer;
+}
+
+.auth-back {
+  display: block;
+  margin: 12px auto 0;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.78rem;
+  color: #8a6d1f;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ----- Error box ----- */
+.auth-errors {
+  background: #fdecea;
+  border: 1px solid #e0a39c;
+  color: #8a1f17;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  margin-top: 6px;
+}
+
+.auth-switch {
+  text-align: center;
+  font-size: 0.78rem;
+  margin-top: 14px;
+}
+
+/* ----- Small screens: center the card ----- */
+@media (max-width: 900px) {
+  .auth-page {
+    justify-content: center;
+  }
+  .auth-card {
+    padding: 28px 24px;
+  }
+}
+
+/* ----- Success message ----- */
+.auth-success {
+  background: #eaf6ec;
+  border: 1px solid #9fd0a6;
+  color: #1e6b2c;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  margin-top: 6px;
+}
